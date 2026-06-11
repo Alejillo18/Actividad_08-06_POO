@@ -18,13 +18,67 @@ Antes de comenzar, tenemos que tener instalado:
 * **Node.js** (Versión 18 o superior recomendada)
 * **npm** (Gestor de paquetes de Node)
 
+***
+## Estructura de carpetas
+
+```plaintext
+src/
+├── Models/
+│   ├── User.ts
+│   ├── Subscription.ts
+│   └── Invoice.ts
+├── Config/
+│   └── DatabaseMemory.ts
+├── Repositories/
+│   ├── IUserRepository.ts
+│   ├── ISubscriptionRepository.ts
+│   ├── UserRepository.ts
+│   └── SubscriptionRepository.ts
+├── Factories/
+│   ├── INotificationChannel.ts
+│   ├── EmailChannel.ts
+│   ├── SMSChannel.ts
+│   └── NotificationFactory.ts
+├── Observers/
+│   ├── IObserver.ts
+│   ├── EmailNotificationObserver.ts
+│   ├── MetricsServiceObserver.ts
+│   └── AccessControlObserver.ts
+├── Services/
+│   ├── PaymentService.ts
+│   └── SubscriptionService.ts
+├── Controllers/
+│   ├── UserController.ts
+│   └── SubscriptionController.ts
+└── main.ts
+
+```
+
+***
+
+## Instrucciones de ejecucion:
+
+_npm install_
+
+
+_npm run dev_
+
+
+
+## Modo produccion:
+
+_Corremos:  npm run build_
+
+_Luego: npm start_
+
+
 ---
 
 Este documento contiene la especificación de diseño, el diagrama de clases, la estructura de directorios. El mismo esta escrito en TypeScript, aplicando patrones creacionales, estructurales y de comportamiento bajo los principios SOLID.
 
 ---
 
-## 1. Diagrama de Clases UML (Esquema Textual)
+## . Diagrama de Clases UML (Esquema Textual)
 
 ```plaintext
 +---------------------+             +--------------------+
@@ -56,4 +110,4 @@ Este documento contiene la especificación de diseño, el diagrama de clases, la
                                v
                        +-------------------+
                        |NotificationFactory|
-                       +-------------------+
+                       +-------------------+ 
